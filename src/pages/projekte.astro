@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+---
+
+<BaseLayout title="Projekte" description="Meine Side-Projects">
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-4">Projekte</h1>
+    <p class="text-gray-600 mb-8">Side-Projects und was ich so baue.</p>
+
+    <div class="grid gap-6">
+      {projects.length > 0 ? (
+        projects.map((project) => (
+          <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="text-xl font-semibold">{project.data.title}</h3>
+                <p class="text-gray-600 mt-2">{project.data.description}</p>
+                <div class="flex gap-2 mt-4">
+                  {project.data.tags?.map((tag: string) => (
+                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">{tag}</span>
+                  ))}
+                </div>
+              </div>
+              {project.data.url && (
+                <a href={project.data.url} target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        ))
+      ) : (
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-semibold">PferdeWert</h3>
+          <p class="text-gray-600 mt-2">Pferdebewertung leicht gemacht.</p>
+          <div class="flex gap-2 mt-4">
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Next.js</span>
+            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">AI</span>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</BaseLayout>

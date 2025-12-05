@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Benjamin Reder - Portfolio' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+    <title>{title} | Benjamin Reder</title>
+  </head>
+  <body class="bg-white text-gray-900 antialiased">
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-gray-100 z-50">
+      <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="/" class="font-semibold text-lg hover:text-primary-600 transition-colors">
+            Benjamin Reder
+          </a>
+          <div class="flex gap-6 text-sm">
+            <a href="/lebenslauf" class="hover:text-primary-600 transition-colors">Lebenslauf</a>
+            <a href="/blog" class="hover:text-primary-600 transition-colors">Blog</a>
+            <a href="/buecher" class="hover:text-primary-600 transition-colors">Bücher</a>
+            <a href="/zitate" class="hover:text-primary-600 transition-colors">Zitate</a>
+            <a href="/projekte" class="hover:text-primary-600 transition-colors">Projekte</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <slot />
+    </main>
+
+    <footer class="border-t border-gray-100 mt-20">
+      <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
+        <p>&copy; {new Date().getFullYear()} Benjamin Reder</p>
+      </div>
+    </footer>
+  </body>
+</html>

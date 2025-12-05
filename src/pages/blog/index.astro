@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) =>
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<BaseLayout title="Blog" description="Meine Gedanken und Artikel">
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-8">Blog</h1>
+
+    <div class="space-y-8">
+      {sortedPosts.length > 0 ? (
+        sortedPosts.map((post) => (
+          <article class="border-b border-gray-100 pb-8">
+            <a href={`/blog/${post.slug}`} class="group">
+              <p class="text-sm text-gray-500 mb-2">{post.data.date}</p>
+              <h2 class="text-2xl font-semibold group-hover:text-primary-600 transition-colors">
+                {post.data.title}
+              </h2>
+              <p class="text-gray-600 mt-2">{post.data.description}</p>
+            </a>
+          </article>
+        ))
+      ) : (
+        <p class="text-gray-500">Noch keine Artikel vorhanden. Schreibe deinen ersten Post in <code class="bg-gray-100 px-2 py-1 rounded">src/content/blog/</code></p>
+      )}
+    </div>
+  </div>
+</BaseLayout>

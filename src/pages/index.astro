@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Visitenkarte">
+  <section class="min-h-[80vh] flex items-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="space-y-6">
+        <p class="text-primary-600 font-medium">Hallo, ich bin</p>
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-900">
+          Benjamin Reder
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 max-w-2xl leading-relaxed">
+          [Dein Pitch hier] – Entwickler, Denker, Macher.
+          Ich baue digitale Produkte und teile meine Gedanken.
+        </p>
+        <div class="flex gap-4 pt-4">
+          <a href="/lebenslauf" class="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+            Mehr über mich
+          </a>
+          <a href="/projekte" class="px-6 py-3 border border-gray-300 rounded-lg hover:border-gray-400 transition-colors">
+            Meine Projekte
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

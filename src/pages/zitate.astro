@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const quotes = await getCollection('quotes');
+---
+
+<BaseLayout title="Zitate" description="Inspirierende Zitate">
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-4">Zitate</h1>
+    <p class="text-gray-600 mb-8">Worte, die mich inspirieren.</p>
+
+    <div class="space-y-8">
+      {quotes.length > 0 ? (
+        quotes.map((quote) => (
+          <blockquote class="border-l-4 border-primary-500 pl-6 py-2">
+            <p class="text-xl text-gray-800 font-serif italic">"{quote.data.text}"</p>
+            <cite class="text-gray-500 mt-2 block not-italic">— {quote.data.author}</cite>
+          </blockquote>
+        ))
+      ) : (
+        <p class="text-gray-500">Noch keine Zitate. Füge sie in <code class="bg-gray-100 px-2 py-1 rounded">src/content/quotes/</code> hinzu.</p>
+      )}
+    </div>
+  </div>
+</BaseLayout>
