@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  {
+    title: "Personal Development",
+    books: [
+      { title: "The Cafe on the Edge of the World", author: "John Strelecky", combined: true },
+      { title: "The Big Five for Life", author: "John Strelecky", combined: true },
+      { title: "The Happiness Project", author: "Gretchen Rubin" },
+      { title: "Emotional Intelligence", author: "Daniel Goleman" },
+      { title: "How to Win Friends & Influence People", author: "Dale Carnegie" },
+      { title: "The Alchemist", author: "Paulo Coelho" },
+    ]
+  },
+  {
+    title: "Business & Career",
+    books: [
+      { title: "Trillion Dollar Coach", author: "Eric Schmidt" },
+      { title: "Crossing the Chasm", author: "Geoffrey A. Moore" },
+      { title: "Good to Great", author: "Jim Collins" },
+      { title: "Platform Revolution", author: "Geoffrey G. Parker" },
+      { title: "The Squiggly Career", author: "Helen Tupper" },
+    ]
+  },
+  {
+    title: "Biographies",
+    books: [
+      { title: "Elon Musk", author: "Walter Isaacson" },
+      { title: "The Snowball: Warren Buffett", author: "Alice Schroeder" },
+      { title: "Open", author: "Andre Agassi" },
+      { title: "Becoming", author: "Michelle Obama" },
+      { title: "The Everything Store", author: "Brad Stone" },
+    ]
+  },
+  {
+    title: "Finance & Investing",
+    books: [
+      { title: "The Big Short", author: "Michael Lewis" },
+      { title: "Rich Dad, Poor Dad", author: "Robert Kiyosaki" },
+      { title: "The Psychology of Money", author: "Morgan Housel" },
+      { title: "The Intelligent Investor", author: "Benjamin Graham" },
+    ]
+  },
+  {
+    title: "Fantasy & Sci-Fi",
+    books: [
+      { title: "The Way of Kings", author: "Brandon Sanderson" },
+      { title: "Mistborn", author: "Brandon Sanderson" },
+      { title: "The Black Prism", author: "Brent Weeks" },
+      { title: "The Warded Man", author: "Peter V. Brett" },
+      { title: "A Game of Thrones", author: "George R.R. Martin" },
+    ]
+  },
+  {
+    title: "Thriller & Crime",
+    books: [
+      { title: "Knife", author: "Jo Nesbo" },
+      { title: "The Thirst", author: "Jo Nesbo" },
+      { title: "The Girl on the Train", author: "Paula Hawkins" },
+      { title: "Gone Girl", author: "Gillian Flynn" },
+      { title: "The Girl With the Dragon Tattoo", author: "Stieg Larsson" },
+    ]
+  },
+  {
+    title: "Family & Parenting",
+    books: [
+      { title: "Hunt, Gather, Parent", author: "Michaeleen Doucleff" },
+      { title: "The Whole-Brain Child", author: "Daniel J. Siegel" },
+      { title: "The Wonder Weeks", author: "Hetty van de Rijt" },
+    ]
+  },
+  {
+    title: "Classics & History",
+    books: [
+      { title: "The Name of the Rose", author: "Umberto Eco" },
+      { title: "The Eight Mountains", author: "Paolo Cognetti" },
+      { title: "The Gambler", author: "Fyodor Dostoevsky" },
+    ]
+  },
+];
+---
+
+<BaseLayout title="Books" description="Books that shaped my thinking">
+  <!-- Header -->
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h1 class="font-display text-4xl md:text-5xl font-semibold mb-4">
+          Books I <span class="text-gradient">Like</span>
+        </h1>
+        <p class="text-muted-foreground max-w-2xl mx-auto">
+          A collection of 115+ books that have shaped my thinking, sorted by category.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books by Category -->
+  {categories.map((category, catIndex) => (
+    <section class={`py-16 ${catIndex % 2 === 0 ? 'bg-card' : 'bg-background'}`}>
+      <div class="container mx-auto px-6">
+        <h2 class="font-display text-2xl md:text-3xl font-semibold mb-8">
+          {category.title}
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {category.books.filter(book => !book.combined || book.title === "The Cafe on the Edge of the World").map((book) => (
+            <div class="group bg-background rounded-xl p-6 shadow-soft card-hover relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent"></div>
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 text-primary/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  {book.combined ? (
+                    <>
+                      <h3 class="font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                        The Cafe on the Edge of the World &
+                      </h3>
+                      <h3 class="font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                        The Big Five for Life
+                      </h3>
+                    </>
+                  ) : (
+                    <h3 class="font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                      {book.title}
+                    </h3>
+                  )}
+                  <p class="text-sm text-muted-foreground mt-1">{book.author}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="py-24 bg-card">
+    <div class="container mx-auto px-6">
+      <div class="text-center">
+        <h2 class="font-display text-2xl md:text-3xl font-semibold mb-4">
+          Got a book recommendation?
+        </h2>
+        <p class="text-muted-foreground max-w-xl mx-auto mb-8">
+          I'm always looking for new reading recommendations. Feel free to reach out!
+        </p>
+        <a href="mailto:hi@benjaminreder.de" class="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+          Send recommendation
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

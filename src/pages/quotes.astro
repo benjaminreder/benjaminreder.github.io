@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const quotes = [
+  {
+    text: "Anyone who stops improving has stopped being good.",
+    author: "Robert Bosch",
+    source: "1940"
+  },
+  {
+    text: "Happiness is a way of life and not a goal to achieve.",
+    author: "Unknown"
+  },
+  {
+    text: "No guts, no glory.",
+    author: "Frederick C. Blesse"
+  },
+  {
+    text: "The only way to do great work is to love what you do.",
+    author: "Steve Jobs",
+    source: "Stanford Commencement Speech, 2005"
+  },
+  {
+    text: "Simplicity is the ultimate sophistication.",
+    author: "Leonardo da Vinci"
+  },
+  {
+    text: "It is not that we have a short time to live, but that we waste a lot of it.",
+    author: "Seneca",
+    source: "On the Shortness of Life"
+  },
+  {
+    text: "Talk is cheap. Show me the code.",
+    author: "Linus Torvalds"
+  },
+];
+---
+
+<BaseLayout title="Quotes" description="Words that inspire me">
+  <!-- Header -->
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h1 class="font-display text-4xl md:text-5xl font-semibold mb-4">
+          Favorite <span class="text-gradient">Quotes</span>
+        </h1>
+        <p class="text-muted-foreground max-w-2xl mx-auto">
+          Words that inspire me, motivate me, and make me think.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quotes -->
+  <section class="py-16 bg-card">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {quotes.map((quote) => (
+          <div class="bg-background rounded-xl p-8 shadow-soft card-hover relative">
+            <svg class="w-8 h-8 text-primary/30 absolute top-6 left-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <div class="pt-8">
+              <p class="text-foreground italic mb-4 leading-relaxed">
+                "{quote.text}"
+              </p>
+              <p class="text-sm text-muted-foreground font-medium">
+                — {quote.author}{quote.source ? `, ${quote.source}` : ''}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-background">
+    <div class="container mx-auto px-6">
+      <div class="text-center">
+        <h2 class="font-display text-2xl md:text-3xl font-semibold mb-4">
+          Got a favorite quote?
+        </h2>
+        <p class="text-muted-foreground max-w-xl mx-auto mb-8">
+          Share your most inspiring quotes with me. Maybe it'll end up here!
+        </p>
+        <a href="mailto:hi@benjaminreder.de" class="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+          Share a quote
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -178,62 +178,69 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="font-display text-4xl md:text-5xl font-semibold mb-4">
-          Books I <span class="text-gradient">Recommend</span>
+          Books I <span class="text-gradient">Like</span>
         </h2>
         <p class="text-muted-foreground max-w-2xl mx-auto">
           A selection of books that have shaped my thinking
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Book 1 -->
-        <div class="bg-background rounded-xl p-6 shadow-soft card-hover">
-          <div class="aspect-[3/4] bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center">
-            <svg class="w-12 h-12 text-primary/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
+        <div class="group bg-background rounded-xl p-6 shadow-soft card-hover relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <span class="text-xl">&#9733;</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                Das Café am Rande der Welt &
+              </h3>
+              <h3 class="font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                The Big Five for Life
+              </h3>
+              <p class="text-sm text-muted-foreground mt-1">John Strelecky</p>
+            </div>
           </div>
-          <h3 class="font-display font-semibold mb-1">The Big Five for Life</h3>
-          <p class="text-sm text-muted-foreground">John Strelecky</p>
         </div>
 
         <!-- Book 2 -->
-        <div class="bg-background rounded-xl p-6 shadow-soft card-hover">
-          <div class="aspect-[3/4] bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg mb-4 flex items-center justify-center">
-            <svg class="w-12 h-12 text-accent/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
+        <div class="group bg-background rounded-xl p-6 shadow-soft card-hover relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-amber-400"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/10 to-amber-400/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <span class="text-xl">&#128176;</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                The Psychology of Money
+              </h3>
+              <p class="text-sm text-muted-foreground mt-1">Morgan Housel</p>
+            </div>
           </div>
-          <h3 class="font-display font-semibold mb-1">Das Cafe am Rande der Welt</h3>
-          <p class="text-sm text-muted-foreground">John Strelecky</p>
         </div>
 
         <!-- Book 3 -->
-        <div class="bg-background rounded-xl p-6 shadow-soft card-hover">
-          <div class="aspect-[3/4] bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center">
-            <svg class="w-12 h-12 text-primary/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
+        <div class="group bg-background rounded-xl p-6 shadow-soft card-hover relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-teal-400"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/10 to-teal-400/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <span class="text-xl">&#128640;</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-display font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                Elon Musk
+              </h3>
+              <p class="text-sm text-muted-foreground mt-1">Walter Isaacson</p>
+            </div>
           </div>
-          <h3 class="font-display font-semibold mb-1">The Psychology of Money</h3>
-          <p class="text-sm text-muted-foreground">Morgan Housel</p>
-        </div>
-
-        <!-- Book 4 -->
-        <div class="bg-background rounded-xl p-6 shadow-soft card-hover">
-          <div class="aspect-[3/4] bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg mb-4 flex items-center justify-center">
-            <svg class="w-12 h-12 text-accent/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <h3 class="font-display font-semibold mb-1">Thinking, Fast and Slow</h3>
-          <p class="text-sm text-muted-foreground">Daniel Kahneman</p>
         </div>
       </div>
 
       <div class="text-center mt-12">
         <a href="/books" class="inline-flex items-center gap-2 text-primary font-medium hover:underline">
-          More books I recommend
+          More books I like
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
