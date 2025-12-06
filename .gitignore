@@ -17,3 +17,5 @@ dist/
 
 # os
 .DS_Store
+Bilder/
+public/logos/*.png
