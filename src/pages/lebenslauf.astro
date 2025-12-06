@@ -3,40 +3,464 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Lebenslauf" description="Mein beruflicher Werdegang und Skills">
-  <div class="max-w-4xl mx-auto px-6 py-12">
-    <h1 class="text-4xl font-bold mb-8">Lebenslauf</h1>
-
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-6 text-gray-800">Erfahrung</h2>
-      <div class="space-y-8">
-        <div class="border-l-2 border-primary-500 pl-6">
-          <p class="text-sm text-primary-600 font-medium">2023 - Heute</p>
-          <h3 class="text-xl font-semibold mt-1">Position</h3>
-          <p class="text-gray-600">Unternehmen</p>
-          <p class="text-gray-500 mt-2">Beschreibung deiner Tätigkeiten...</p>
+  <!-- Header Section -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <div class="flex flex-col md:flex-row gap-8 items-start md:items-center">
+        <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-4xl font-bold text-neutral-900 shrink-0">
+          BR
         </div>
-        <!-- Weitere Positionen hier -->
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-3 opacity-0 animate-fade-in-up">
+            <span class="gradient-text">Lebenslauf</span>
+          </h1>
+          <p class="text-xl text-white/60 opacity-0 animate-fade-in-up animation-delay-100">
+            AI Enthusiast & Business Strategist | Bridging Sales, Marketing, and AI-Driven Solutions
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-6 text-gray-800">Skills</h2>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span>
-        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">TypeScript</span>
-        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">React</span>
-        <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Node.js</span>
-        <!-- Weitere Skills -->
+  <!-- Experience Section -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 opacity-0 animate-fade-in-up animation-delay-200">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold">Berufserfahrung</h2>
       </div>
-    </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-6 text-gray-800">Ausbildung</h2>
-      <div class="border-l-2 border-gray-300 pl-6">
-        <p class="text-sm text-gray-500">Jahr - Jahr</p>
-        <h3 class="text-xl font-semibold mt-1">Abschluss</h3>
-        <p class="text-gray-600">Institution</p>
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500 via-orange-500 to-transparent hidden md:block"></div>
+
+        <div class="space-y-8">
+          <!-- PferdeWert.de -->
+          <div class="relative opacity-0 animate-fade-in-up animation-delay-300">
+            <div class="md:ml-20 glass-card p-8 hover-lift group">
+              <!-- Timeline dot with logo -->
+              <div class="absolute left-3 top-8 w-12 h-12 rounded-full bg-white border-4 border-neutral-950 hidden md:flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden">
+                <img src="/logos/pferdewert.png" alt="PferdeWert.de" class="w-8 h-8 object-contain" />
+              </div>
+
+              <div class="flex flex-wrap gap-4 justify-between items-start mb-4">
+                <div class="flex items-start gap-4">
+                  <img src="/logos/pferdewert.png" alt="PferdeWert.de" class="w-12 h-12 rounded-lg object-contain bg-white p-1 md:hidden" />
+                  <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium mb-3">
+                      Aug. 2025 - Heute
+                    </span>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                      Co-Founder
+                    </h3>
+                    <p class="text-white/60 mt-1">PferdeWert · Selbstständig</p>
+                    <p class="text-white/40 text-sm mt-1">Stuttgart</p>
+                  </div>
+                </div>
+                <div class="px-4 py-2 rounded-lg bg-green-500/10 text-green-400 text-sm font-medium">
+                  Aktuell
+                </div>
+              </div>
+              <p class="text-white/50 leading-relaxed">
+                Side-Project mit meiner Frau: Vibe-Coding einer KI-Plattform für Pferdebewertungen.
+                Ob Kauf, Verkauf oder einfach nur neugierig auf den Marktwert - pferdewert.de
+              </p>
+              <div class="flex flex-wrap gap-2 mt-6">
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">AI</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Startup</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Vibe-Coding</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bosch Power Tools - Strategic Partner Manager -->
+          <div class="relative opacity-0 animate-fade-in-up animation-delay-400">
+            <div class="md:ml-20 glass-card p-8 hover-lift group">
+              <div class="absolute left-3 top-8 w-12 h-12 rounded-full bg-white border-4 border-neutral-950 hidden md:flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden">
+                <img src="/logos/bosch.png" alt="Bosch" class="w-8 h-8 object-contain" />
+              </div>
+
+              <div class="flex flex-wrap gap-4 justify-between items-start mb-4">
+                <div class="flex items-start gap-4">
+                  <img src="/logos/bosch.png" alt="Bosch" class="w-12 h-12 rounded-lg object-contain bg-white p-1 md:hidden" />
+                  <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium mb-3">
+                      Apr. 2025 - Heute
+                    </span>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                      Strategic Partner Manager Digital Solutions
+                    </h3>
+                    <p class="text-white/60 mt-1">Bosch Power Tools</p>
+                    <p class="text-white/40 text-sm mt-1">Stuttgart</p>
+                  </div>
+                </div>
+                <div class="px-4 py-2 rounded-lg bg-green-500/10 text-green-400 text-sm font-medium">
+                  Aktuell
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">SEO</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Künstliche Intelligenz</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Digital Solutions</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bosch Power Tools - Sales Lead -->
+          <div class="relative opacity-0 animate-fade-in-up animation-delay-500">
+            <div class="md:ml-20 glass-card p-8 hover-lift group">
+              <div class="absolute left-3 top-8 w-12 h-12 rounded-full bg-white border-4 border-neutral-950 hidden md:flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden">
+                <img src="/logos/bosch.png" alt="Bosch" class="w-8 h-8 object-contain" />
+              </div>
+
+              <div class="flex flex-wrap gap-4 justify-between items-start mb-4">
+                <div class="flex items-start gap-4">
+                  <img src="/logos/bosch.png" alt="Bosch" class="w-12 h-12 rounded-lg object-contain bg-white p-1 md:hidden" />
+                  <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-sm font-medium mb-3">
+                      Juni 2022 - Apr. 2025
+                    </span>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                      Sales Lead Digital Solutions
+                    </h3>
+                    <p class="text-white/60 mt-1">Bosch Power Tools</p>
+                    <p class="text-white/40 text-sm mt-1">Stuttgart</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Sales</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Digital Solutions</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bosch Power Tools - Product Manager -->
+          <div class="relative opacity-0 animate-fade-in-up animation-delay-600">
+            <div class="md:ml-20 glass-card p-8 hover-lift group">
+              <div class="absolute left-3 top-8 w-12 h-12 rounded-full bg-white border-4 border-neutral-950 hidden md:flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden">
+                <img src="/logos/bosch.png" alt="Bosch" class="w-8 h-8 object-contain" />
+              </div>
+
+              <div class="flex flex-wrap gap-4 justify-between items-start mb-4">
+                <div class="flex items-start gap-4">
+                  <img src="/logos/bosch.png" alt="Bosch" class="w-12 h-12 rounded-lg object-contain bg-white p-1 md:hidden" />
+                  <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-sm font-medium mb-3">
+                      März 2021 - Mai 2022
+                    </span>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                      Product Manager & Business Developer Digital Solutions
+                    </h3>
+                    <p class="text-white/60 mt-1">Bosch Power Tools</p>
+                    <p class="text-white/40 text-sm mt-1">Stuttgart</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Product Management</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Business Development</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bosch Connected Devices -->
+          <div class="relative opacity-0 animate-fade-in-up">
+            <div class="md:ml-20 glass-card p-8 hover-lift group">
+              <div class="absolute left-3 top-8 w-12 h-12 rounded-full bg-white border-4 border-neutral-950 hidden md:flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden">
+                <img src="/logos/bosch.png" alt="Bosch" class="w-8 h-8 object-contain" />
+              </div>
+
+              <div class="flex flex-wrap gap-4 justify-between items-start mb-4">
+                <div class="flex items-start gap-4">
+                  <img src="/logos/bosch.png" alt="Bosch" class="w-12 h-12 rounded-lg object-contain bg-white p-1 md:hidden" />
+                  <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-sm font-medium mb-3">
+                      Juli 2018 - Feb. 2021
+                    </span>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                      Sales Manager EMEA for IoT Solutions
+                    </h3>
+                    <p class="text-white/60 mt-1">Bosch Connected Devices and Solutions</p>
+                    <p class="text-white/40 text-sm mt-1">Reutlingen</p>
+                  </div>
+                </div>
+              </div>
+              <p class="text-white/50 leading-relaxed">
+                Business Development für Industry 4.0 und IoT
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">IoT</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Industry 4.0</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">EMEA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- adesso -->
+          <div class="relative opacity-0 animate-fade-in-up">
+            <div class="md:ml-20 glass-card p-8 hover-lift group">
+              <div class="absolute left-3 top-8 w-12 h-12 rounded-full bg-white border-4 border-neutral-950 hidden md:flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden">
+                <img src="/logos/adesso.png" alt="adesso" class="w-8 h-8 object-contain" />
+              </div>
+
+              <div class="flex flex-wrap gap-4 justify-between items-start mb-4">
+                <div class="flex items-start gap-4">
+                  <img src="/logos/adesso.png" alt="adesso" class="w-12 h-12 rounded-lg object-contain bg-white p-1 md:hidden" />
+                  <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium mb-3">
+                      Juli 2014 - Juni 2018
+                    </span>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                      Account Manager
+                    </h3>
+                    <p class="text-white/60 mt-1">adesso SE</p>
+                    <p class="text-white/40 text-sm mt-1">Stuttgart</p>
+                  </div>
+                </div>
+              </div>
+              <p class="text-white/50 leading-relaxed">
+                Software Development und IT-Consulting
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">IT-Consulting</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Software Development</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TQG -->
+          <div class="relative opacity-0 animate-fade-in-up">
+            <div class="md:ml-20 glass-card p-8 hover-lift group">
+              <div class="absolute left-3 top-8 w-12 h-12 rounded-full bg-white border-4 border-neutral-950 hidden md:flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden">
+                <img src="/logos/tqg.png" alt="TQG" class="w-8 h-8 object-contain" />
+              </div>
+
+              <div class="flex flex-wrap gap-4 justify-between items-start mb-4">
+                <div class="flex items-start gap-4">
+                  <img src="/logos/tqg.png" alt="TQG" class="w-12 h-12 rounded-lg object-contain bg-white p-1 md:hidden" />
+                  <div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm font-medium mb-3">
+                      Jan. 2013 - Juni 2014
+                    </span>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                      Account Manager
+                    </h3>
+                    <p class="text-white/60 mt-1">The Quality Group GmbH (TQG)</p>
+                    <p class="text-white/40 text-sm mt-1">Böblingen</p>
+                  </div>
+                </div>
+              </div>
+              <p class="text-white/50 leading-relaxed">
+                Software-Lösungen für Enterprise Information Management
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Enterprise Software</span>
+                <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10">Information Management</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 opacity-0 animate-fade-in-up">
+        <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold">Ausbildung</h2>
+      </div>
+
+      <div class="grid md:grid-cols-1 gap-6">
+        <!-- Uni Bamberg -->
+        <div class="glass-card p-8 hover-lift opacity-0 animate-fade-in-up animation-delay-100">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden">
+              <img src="/logos/uni-bamberg.png" alt="Uni Bamberg" class="w-12 h-12 object-contain" />
+            </div>
+            <div class="flex-1">
+              <span class="inline-block px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium mb-3">
+                2010 - 2012
+              </span>
+              <h3 class="text-2xl font-bold text-white mb-2">Master of Science (M.Sc.), Betriebswirtschaftslehre</h3>
+              <p class="text-white/60">Otto-Friedrich-Universität Bamberg</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HKA -->
+        <div class="glass-card p-8 hover-lift opacity-0 animate-fade-in-up animation-delay-200">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden">
+              <img src="/logos/hka.png" alt="Hochschule Karlsruhe" class="w-12 h-12 object-contain" />
+            </div>
+            <div class="flex-1">
+              <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium mb-3">
+                2006 - 2009
+              </span>
+              <h3 class="text-2xl font-bold text-white mb-2">Bachelor of Engineering (B.Eng.), Wirtschaftsingenieurwesen</h3>
+              <p class="text-white/60">Hochschule Karlsruhe (HKA)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TU Dublin -->
+        <div class="glass-card p-8 hover-lift opacity-0 animate-fade-in-up animation-delay-300">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden">
+              <img src="/logos/tudublin.png" alt="TU Dublin" class="w-12 h-12 object-contain" />
+            </div>
+            <div class="flex-1">
+              <span class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm font-medium mb-3">
+                Auslandssemester
+              </span>
+              <h3 class="text-2xl font-bold text-white mb-2">Auslandssemester, Business & Management</h3>
+              <p class="text-white/60">Technological University Dublin</p>
+              <p class="text-white/40 text-sm mt-2">CYM Rugby Football Club</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 opacity-0 animate-fade-in-up">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold">Skills & Expertise</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Business -->
+        <div class="glass-card p-8 hover-lift opacity-0 animate-fade-in-up animation-delay-100">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
+              <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </span>
+            Business & Sales
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">Strategic Partnerships</span>
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">Business Development</span>
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">Account Management</span>
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">Sales Leadership</span>
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">Product Management</span>
+          </div>
+        </div>
+
+        <!-- Technology -->
+        <div class="glass-card p-8 hover-lift opacity-0 animate-fade-in-up animation-delay-200">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+              <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </span>
+            Technology
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-blue-500/50 hover:text-blue-400 transition-colors cursor-default">Künstliche Intelligenz</span>
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-blue-500/50 hover:text-blue-400 transition-colors cursor-default">IoT / Industry 4.0</span>
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-blue-500/50 hover:text-blue-400 transition-colors cursor-default">Digital Solutions</span>
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-blue-500/50 hover:text-blue-400 transition-colors cursor-default">SEO</span>
+            <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10 hover:border-blue-500/50 hover:text-blue-400 transition-colors cursor-default">Vibe-Coding</span>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="glass-card p-8 hover-lift opacity-0 animate-fade-in-up animation-delay-300">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center">
+              <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+            </span>
+            Sprachen
+          </h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-white/70">Deutsch</span>
+                <span class="text-green-400">Muttersprache</span>
+              </div>
+              <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                <div class="h-full w-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-white/70">Englisch</span>
+                <span class="text-green-400">Fließend</span>
+              </div>
+              <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                <div class="h-full w-[90%] bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-white/70">Spanisch</span>
+                <span class="text-green-400">Grundkenntnisse</span>
+              </div>
+              <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                <div class="h-full w-[40%] bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CV CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="glass-card p-12 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-orange-500/5"></div>
+        <div class="relative">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Interesse geweckt?
+          </h2>
+          <p class="text-white/60 max-w-xl mx-auto mb-8">
+            Lade meinen vollständigen Lebenslauf als PDF herunter oder kontaktiere mich direkt.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-neutral-900 rounded-xl font-semibold hover:scale-105 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              CV herunterladen
+            </a>
+            <a href="mailto:hello@benjaminreder.de" class="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/5 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Kontakt aufnehmen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
