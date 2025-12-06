@@ -90,41 +90,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Image Strip -->
+  <!-- Image Strip (auskommentiert - später mit eigenen Bildern aktivieren)
   <section class="py-8 bg-card overflow-hidden">
     <div class="flex gap-4 animate-scroll">
-      <!-- First set of images -->
       <div class="flex gap-4 min-w-max">
-        <div class="w-72 h-48 rounded-xl overflow-hidden shadow-soft">
-          <img src="/images/hero.webp" alt="Salar de Uyuni" class="w-full h-full object-cover" loading="lazy" />
+        <div class="w-72 h-48 md:w-72 md:h-48 w-56 h-36 rounded-xl overflow-hidden shadow-soft">
+          <img src="/images/hero.webp" alt="Bild 1" class="w-full h-full object-cover" loading="lazy" />
         </div>
-        <div class="w-72 h-48 rounded-xl overflow-hidden shadow-soft">
-          <img src="/images/profilbild.webp" alt="Benjamin Reder" class="w-full h-full object-cover" loading="lazy" />
+        <div class="w-72 h-48 md:w-72 md:h-48 w-56 h-36 rounded-xl overflow-hidden shadow-soft">
+          <img src="/images/profilbild.webp" alt="Bild 2" class="w-full h-full object-cover" loading="lazy" />
         </div>
-        <div class="w-72 h-48 rounded-xl overflow-hidden shadow-soft">
-          <img src="/images/hero.webp" alt="Salar de Uyuni" class="w-full h-full object-cover" loading="lazy" />
+        <div class="w-72 h-48 md:w-72 md:h-48 w-56 h-36 rounded-xl overflow-hidden shadow-soft">
+          <img src="/images/hero.webp" alt="Bild 3" class="w-full h-full object-cover" loading="lazy" />
         </div>
-        <div class="w-72 h-48 rounded-xl overflow-hidden shadow-soft">
-          <img src="/images/profilbild.webp" alt="Benjamin Reder" class="w-full h-full object-cover" loading="lazy" />
+        <div class="w-72 h-48 md:w-72 md:h-48 w-56 h-36 rounded-xl overflow-hidden shadow-soft">
+          <img src="/images/profilbild.webp" alt="Bild 4" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
-      <!-- Duplicate set for seamless infinite scroll -->
       <div class="flex gap-4 min-w-max">
-        <div class="w-72 h-48 rounded-xl overflow-hidden shadow-soft">
-          <img src="/images/hero.webp" alt="Salar de Uyuni" class="w-full h-full object-cover" loading="lazy" />
+        <div class="w-72 h-48 md:w-72 md:h-48 w-56 h-36 rounded-xl overflow-hidden shadow-soft">
+          <img src="/images/hero.webp" alt="Bild 1" class="w-full h-full object-cover" loading="lazy" />
         </div>
-        <div class="w-72 h-48 rounded-xl overflow-hidden shadow-soft">
-          <img src="/images/profilbild.webp" alt="Benjamin Reder" class="w-full h-full object-cover" loading="lazy" />
+        <div class="w-72 h-48 md:w-72 md:h-48 w-56 h-36 rounded-xl overflow-hidden shadow-soft">
+          <img src="/images/profilbild.webp" alt="Bild 2" class="w-full h-full object-cover" loading="lazy" />
         </div>
-        <div class="w-72 h-48 rounded-xl overflow-hidden shadow-soft">
-          <img src="/images/hero.webp" alt="Salar de Uyuni" class="w-full h-full object-cover" loading="lazy" />
+        <div class="w-72 h-48 md:w-72 md:h-48 w-56 h-36 rounded-xl overflow-hidden shadow-soft">
+          <img src="/images/hero.webp" alt="Bild 3" class="w-full h-full object-cover" loading="lazy" />
         </div>
-        <div class="w-72 h-48 rounded-xl overflow-hidden shadow-soft">
-          <img src="/images/profilbild.webp" alt="Benjamin Reder" class="w-full h-full object-cover" loading="lazy" />
+        <div class="w-72 h-48 md:w-72 md:h-48 w-56 h-36 rounded-xl overflow-hidden shadow-soft">
+          <img src="/images/profilbild.webp" alt="Bild 4" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
+  -->
 
   <!-- Current Project Section -->
   <section id="project" class="py-24 bg-background">
@@ -458,6 +457,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     .animate-scroll {
       animation: scroll 30s linear infinite;
+    }
+
+    /* Schnellere Animation auf Mobile */
+    @media (max-width: 768px) {
+      .animate-scroll {
+        animation: scroll 15s linear infinite;
+      }
     }
 
     .animate-scroll:hover {
