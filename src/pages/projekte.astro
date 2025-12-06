@@ -9,7 +9,7 @@ const projects = await getCollection('projects');
   <!-- Header Section -->
   <section class="py-16 relative overflow-hidden">
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl"></div>
 
     <div class="max-w-6xl mx-auto px-6 relative">
       <div class="text-center max-w-3xl mx-auto">
@@ -21,7 +21,7 @@ const projects = await getCollection('projects');
         </div>
 
         <h1 class="text-4xl md:text-6xl font-bold mb-6 opacity-0 animate-fade-in-up animation-delay-100">
-          Meine <span class="gradient-text">Projekte</span>
+          Meine <span class="text-gradient">Projekte</span>
         </h1>
         <p class="text-xl text-white/60 opacity-0 animate-fade-in-up animation-delay-200">
           Eine Sammlung von Projekten, an denen ich arbeite oder gearbeitet habe.
@@ -40,18 +40,18 @@ const projects = await getCollection('projects');
             <div class={`group opacity-0 animate-fade-in-up animation-delay-${(index % 4 + 1) * 100}`}>
               <div class="glass-card p-8 h-full hover-lift relative overflow-hidden">
                 <!-- Gradient overlay on hover -->
-                <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <div class="relative">
                   <!-- Project icon/badge -->
                   <div class="flex items-start justify-between mb-6">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                       </svg>
                     </div>
                     {project.data.url && (
-                      <a href={project.data.url} target="_blank" rel="noopener" class="p-3 rounded-xl bg-white/5 text-white/50 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-300">
+                      <a href={project.data.url} target="_blank" rel="noopener" class="p-3 rounded-xl bg-white/5 text-white/50 hover:text-primary hover:bg-primary-500/10 transition-all duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
@@ -59,7 +59,7 @@ const projects = await getCollection('projects');
                     )}
                   </div>
 
-                  <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+                  <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
                     {project.data.title}
                   </h3>
                   <p class="text-white/50 mb-6 leading-relaxed">
@@ -69,7 +69,7 @@ const projects = await getCollection('projects');
                   <!-- Tags -->
                   <div class="flex flex-wrap gap-2">
                     {project.data.tags?.map((tag: string) => (
-                      <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10 group-hover:border-amber-500/30 group-hover:text-amber-400/80 transition-colors">
+                      <span class="px-3 py-1 rounded-lg bg-white/5 text-white/60 text-sm border border-white/10 group-hover:border-primary-500/30 group-hover:text-primary/80 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -83,16 +83,16 @@ const projects = await getCollection('projects');
             <!-- Featured Project: PferdeWert -->
             <div class="group opacity-0 animate-fade-in-up animation-delay-100 md:col-span-2">
               <div class="glass-card p-8 md:p-10 hover-lift relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-orange-500/5"></div>
-                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-primary-600/5"></div>
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl"></div>
 
                 <div class="relative grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium mb-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/20 text-primary text-sm font-medium mb-4">
                       <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                       Featured Project
                     </div>
-                    <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors">
+                    <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
                       PferdeWert
                     </h3>
                     <p class="text-white/60 mb-6 leading-relaxed text-lg">
@@ -105,7 +105,7 @@ const projects = await getCollection('projects');
                       <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10">TypeScript</span>
                       <span class="px-4 py-2 rounded-xl bg-white/5 text-white/70 text-sm border border-white/10">Tailwind</span>
                     </div>
-                    <a href="#" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-medium transition-colors">
+                    <a href="#" class="inline-flex items-center gap-2 text-primary hover:text-primary-400 font-medium transition-colors">
                       Projekt ansehen
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -113,8 +113,8 @@ const projects = await getCollection('projects');
                     </a>
                   </div>
                   <div class="hidden md:flex justify-center">
-                    <div class="w-48 h-48 rounded-3xl bg-gradient-to-br from-amber-500/30 to-orange-500/30 flex items-center justify-center">
-                      <svg class="w-24 h-24 text-amber-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-48 h-48 rounded-3xl bg-gradient-to-br from-primary-500/30 to-primary-600/30 flex items-center justify-center">
+                      <svg class="w-24 h-24 text-primary/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
@@ -174,7 +174,7 @@ const projects = await getCollection('projects');
   <section class="py-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="glass-card p-12 md:p-16 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-amber-500/10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-primary-500/10"></div>
         <div class="relative">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
             Hast du eine Idee?
@@ -183,7 +183,7 @@ const projects = await getCollection('projects');
             Ich bin immer offen für neue Projekte und Zusammenarbeit.
             Lass uns gemeinsam etwas Großartiges bauen!
           </p>
-          <a href="mailto:hi@benjaminreder.de" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-neutral-900 rounded-xl font-semibold hover:scale-105 transition-transform">
+          <a href="mailto:hi@benjaminreder.de" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-neutral-900 rounded-xl font-semibold hover:scale-105 transition-transform">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
