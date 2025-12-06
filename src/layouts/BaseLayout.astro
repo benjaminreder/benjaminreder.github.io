@@ -2,13 +2,14 @@
 interface Props {
   title: string;
   description?: string;
+  lang?: string;
 }
 
-const { title, description = 'Benjamin Reder - Personal Website' } = Astro.props;
+const { title, description = 'Benjamin Reder - Personal Website', lang = 'en' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,16 +21,43 @@ const { title, description = 'Benjamin Reder - Personal Website' } = Astro.props
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${title} | Benjamin Reder`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/hero.jpg" />
+    <meta property="og:image" content="/images/hero.webp" />
     <meta property="og:url" content="https://benjaminreder.de" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" as="image" href="/images/hero.jpg" />
+    <link rel="preload" as="image" href="/images/hero.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title} | Benjamin Reder</title>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Benjamin Reder",
+        "url": "https://benjaminreder.de",
+        "image": "https://benjaminreder.de/images/profilbild.webp",
+        "jobTitle": "Sales Lead & Strategic Partner Manager Digital Solutions",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Robert Bosch Power Tools"
+        },
+        "sameAs": [
+          "https://linkedin.com/in/benjaminreder",
+          "https://github.com/benjaminreder",
+          "https://x.com/benjaminreder",
+          "https://instagram.com/benjaminreder"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Stuttgart",
+          "addressCountry": "DE"
+        }
+      }
+    </script>
   </head>
   <body class="bg-background text-foreground antialiased">
     <!-- Navigation -->
