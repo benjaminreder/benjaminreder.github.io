@@ -14,15 +14,22 @@ export default {
        * - background: Warm cream/white base
        * - foreground: Dark slate for text
        *
+       * PAGE THEMES:
+       * - Light pages (index, impressum, datenschutz, books, quotes):
+       *   Use design tokens (text-foreground, text-muted-foreground, etc.)
+       * - Dark pages (projekte, blog, lebenslauf):
+       *   Use glass-card with text-white/XX for readability on dark backgrounds
+       *
        * USAGE GUIDELINES:
        * - Links: text-primary hover:underline
        * - Highlighted headings: text-gradient (teal→amber gradient)
-       * - Muted text: text-muted-foreground
-       * - Cards: bg-card with shadow-soft
+       * - Light pages: text-muted-foreground for muted text
+       * - Dark pages: text-white/60 for muted text on glass-card
+       * - Cards: bg-card with shadow-soft (light) or glass-card (dark)
        * - Hover effects: card-hover class
        *
        * DO NOT USE:
-       * - text-amber-* or text-orange-* directly
+       * - text-amber-* or text-orange-* directly (use text-primary instead)
        * - gradient-text (deprecated, use text-gradient instead)
        * ===========================================
        */
